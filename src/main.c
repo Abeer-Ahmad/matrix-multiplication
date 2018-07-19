@@ -24,9 +24,9 @@ int main(int argc, char *argv[]) {
         set_B(argv[2]);
         output_file = argv[3];
     } else { // use default files
-        set_A("a.txt");
-        set_B("b.txt");
-        output_file = "c.txt";
+        set_A("resources/a.txt");
+        set_B("resources/b.txt");
+        output_file = "c.out";
     }
     allocate_output_matrix();
     reset_output_matrix();
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     gettimeofday(&start, NULL); // start stopwatch
     run_row_threads(A, B, C, L, M, N);
     gettimeofday(&stop, NULL); // stop
-    write_output_file("RowThreadedOutput.txt", C, L, N);
+    write_output_file("RowThreadedOutput.out", C, L, N);
     printf("Number of threads created in the \"Thread per Row\" method = %d\n", L);
     printf("Time taken in seconds =  %lu\n", stop.tv_sec - start.tv_sec);
     printf("Time taken in microseconds = %lu\n\n", stop.tv_usec - start.tv_usec);
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
     gettimeofday(&start, NULL); // start stopwatch
     run_element_threads(A, B, C, L, M, N);
     gettimeofday(&stop, NULL); // stop
-    write_output_file("ElementThreadedOutput.txt", C, L, N);
+    write_output_file("ElementThreadedOutput.out", C, L, N);
     printf("Number of threads created in the \"Thread per Element\" method = %d\n", L * N);
     printf("Time taken in seconds =  %lu\n", stop.tv_sec - start.tv_sec);
     printf("Time taken in microseconds = %lu\n\n", stop.tv_usec - start.tv_usec);
