@@ -18,5 +18,6 @@ $(TARGET): $(OBJECTS)
 clean:
 	-rm -f $(shell find . -name "*.o")
 	-rm -f $(TARGET)
+	-rm -f c.txt
 	-rm -f RowThreadedOutput.txt
 	-rm -f ElementThreadedOutput.txt
