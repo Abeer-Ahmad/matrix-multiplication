@@ -1,7 +1,7 @@
 # matrix-multiplication
 A parallelized version of matrix multiplication via multi-threading.
 ## Overview
-The input to the program is two matrices A(x*y) and B(y*z) that are read from corresponding files, while he output is a matrix C(x*z) that is written to an output file. 
+The input to the program is two matrices A(x\*y) and B(y\*z) that are read from corresponding files, while he output is a matrix C(x\*z) that is written to an output file. 
 
 A parallelized version of matrix multiplication can be done using one of the following two methods:
 1. A thread computes each row in the output C matrix.
